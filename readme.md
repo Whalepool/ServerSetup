@@ -219,7 +219,7 @@ enable plugin: `sudo rabbitmq-plugins enable rabbitmq_delayed_message_exchange`
 # Mongodb 
   
 #### MongoDB
-[Instructions](https://docs.mongodb.com/tutorials/install-mongodb-on-ubuntu/)  
+[Instructions](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)  
   
   
 #### Robomongo
