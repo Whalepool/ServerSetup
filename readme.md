@@ -2,7 +2,7 @@
 ```bash
 apt-get update 
 apt-get upgrade  
-apt-get install software-properties-common git vim unzip build-essential curl libexpat1-dev fontconfig unzip libxml2-dev dh-autoreconf libssl-dev sendmail-bin
+apt-get install software-properties-common git vim unzip build-essential curl libcurl4-gnutls-dev libexpat1-dev fontconfig unzip libxml2-dev dh-autoreconf libssl-dev sendmail-bin
 ```   
   
 ----  
