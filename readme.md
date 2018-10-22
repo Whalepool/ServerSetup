@@ -39,7 +39,20 @@ apt-get install git-core zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"  
 ```   
 [zsh themes](https://github.com/robbyrussell/oh-my-zsh/wiki/themes) - eg: mrtazz, norm 
-  
+
+##### zsh plugins   
+clone into ./oh-my-zsh/plugins   
+
+`git clone https://github.com/zsh-users/zsh-autosuggestions`  
+Add to plugins list `zsh-autosuggestions` 
+^ auto suggestions based on command history 
+
+`git clone https://github.com/zsh-users/zsh-syntax-highlighting`  
+Add to plugins list `zsh-syntax-highlighting`  
+^ adds syntax higlighting as you type   
+
+**IF** there is an issue with the tab completion duplicating the command [see here](https://github.com/syl20bnr/spacemacs/issues/5519#issuecomment-417890865) 
+
 #### termite terminfo  
 ```bash  
 wget https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo
