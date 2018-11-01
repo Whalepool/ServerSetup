@@ -79,6 +79,9 @@ pacstrap /mnt base base-devel
 # Or, you can go full blown, cuz you know this shits going to work. 
 pacstrap /mnt base base-devel git zsh vim gptfdisk grub xorg xorg-xinit i3-wm demnu i3status i3lock deluge gimp nano maim teamspeak3 telegram-desktop htop curl wget unzip termite nfs-utils ntfs-3g efibootmgr os-prober openvpn alsa-utils pavucontrol pulseaudio-alsa qtox 
 # ... I'm sure  you can thin kof more.  
+# Bonus packages you may want
+git mlocate keepassxc ttj-dejavu openssh nemo eog bdf-unifont ttf-croscore brasero ffmpeg npm nodejs filezilla audacious 
+
 ```  
 Once this is done I recommend you mount any other servers or disks while you're here...  
 ```bash
@@ -193,4 +196,25 @@ start x
 ```
 
 You should now be in i3.  Take it from here. 
+
+
+
+
+## update pacman repos
+pacman -Syy
+
+## oh-my-zsh 
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# 
+vim ~/.zshrc  # - add in 'archlinux, zsh-autosuggestions zsh-syntax-highlighting' plugins with git 
+
+# Theme: norm
+```
+
+### Install sublime
+https://www.sublimetext.com/docs/3/linux_repositories.html#pacman
+
+
+
 
