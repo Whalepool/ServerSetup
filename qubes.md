@@ -2,7 +2,7 @@
     
 Qubes, found at https://www.qubes-os.org/ - Is a good linux desktop OS. 
 For those involved in crypto, Qubes is a good operationg system. Using security by separation of concerns.  
-      
+
 Here's some useful code from my experiences with Qubes.    
     
 #### Tips  
@@ -315,4 +315,34 @@ VPN_OPTIONS='--cd /rw/config/vpn/ --config openvpn-client.ovpn --daemon'
 su - -c 'notify-send "$(hostname): Starting vpn connection..." --icon=network-idle' user
 groupadd -rf qvpn ; sleep 2s
 sg qvpn -c "$VPN_CLIENT $VPN_OPTIONS"
+```   
+   
+### Script to auto start vm, attach & mount block device   
+Useful little script for opening for example a 'bitcoind' vm, with auto start/attach/mount if not already running.
+Can then call this script from a .desktop launcher  
+```bash    
+#!/bin/bash       
+list=`qvm-ls --raw-data`    
+is_bitcoind_running=`awk '/bitcoind\|Running/' <<< "$list"`    
+   
+echo "is_bitcoind_running: $is_bitcoind_running"   
+   
+if [ -z $is_bitcoind_running ]
+then 
+	echo "bitcoind is not running"    
+	echo "starting bitcoind.... "   
+	qvm-start -v bitcoind    
+   
+	echo "attaching block device..."
+	qvm-block -v attach bitcoind dom0:nvme0n1    
+    
+	echo "mounting nvme drive on bitcoind vm"
+	qvm-run -a bitcoind 'sudo mount /dev/xvdi1 /home/user/bitcoind'    
+    
+	echo "opening gnome terminal"   
+	qvm-run -a bitcoind 'gnome-terminal'    
+else
+	echo "bitcoind is running, opening gnome terminal"    
+	qvm-run -a bitcoind 'gnome-terminal'   
+fi   
 ```
