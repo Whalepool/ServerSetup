@@ -346,3 +346,18 @@ else
 	qvm-run -a bitcoind 'gnome-terminal'   
 fi   
 ```
+
+### Bisq
+Download the .deb file onto a fedora machine then just
+```bash    
+ar x Bisq-64bit-0.9.1.deb    
+tar -xf data.tar.xz   
+cd opt/Bisq   
+./Bisq   
+```  
+  
+### Auto run xterm   
+Run xterm from a dispv with a black background and a readable font size   
+```bash
+xterm -fg white -bg black -fn 10x20 -e /bin/bash   
+```
